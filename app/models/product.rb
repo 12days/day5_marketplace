@@ -1,4 +1,4 @@
 class Product < ActiveRecord::Base
-  belongs_to :users
-  has_one :supplier
+  belongs_to :order
+  # has_many :suppliers
 end
