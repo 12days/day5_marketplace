@@ -7,6 +7,7 @@ gem 'twitter-bootstrap-rails'
 gem 'therubyracer', platforms: :ruby
 gem 'thin'
 gem 'kaminari'
+gem 'squeel'
 
 group :assets do
   gem 'sass-rails', '~> 4.0.0'
