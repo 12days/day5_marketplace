@@ -1,0 +1,8 @@
+<div class="frontpage">
+  <%= paginate @products %>
+  <% @products.each do |jerky| %>
+    <%= link_to jerky.name, product_path(jerky) %><br>
+    <%= jerky.description %><br>
+    <%= jerky.price %><br>
+  <% end %>
+</div>
