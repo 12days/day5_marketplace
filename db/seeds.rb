@@ -5,3 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+(1..100).each do |i|
+  Product.create!(name: "jerky#{i}", description: "this is jerky #{i}", price: i)
+end
