@@ -6,6 +6,7 @@ gem 'devise'
 gem 'twitter-bootstrap-rails'
 gem 'therubyracer', platforms: :ruby
 gem 'thin'
+gem 'kaminari'
 
 group :assets do
   gem 'sass-rails', '~> 4.0.0'
