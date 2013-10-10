@@ -7,11 +7,13 @@ gem 'twitter-bootstrap-rails'
 gem 'therubyracer', platforms: :ruby
 gem 'thin'
 gem 'kaminari'
+gem 'squeel'
 
 group :assets do
   gem 'sass-rails', '~> 4.0.0'
   gem 'coffee-rails', '~> 4.0.0'
   gem 'uglifier', '>= 1.3.0'
+  gem 'haml-rails'
 end
 
 group :development, :test do

@@ -1,8 +1,35 @@
-<div class="frontpage">
-  <%= paginate @products %>
-  <% @products.each do |jerky| %>
-    <%= link_to jerky.name, product_path(jerky) %><br>
-    <%= jerky.description %><br>
-    <%= jerky.price %><br>
-  <% end %>
+<br><br>
+<div class="row-fluid">
+
+  <div class="span4">
+    <%= paginate @products %>
+
+    <table class="pretty">
+      <tr>
+        <th><%= sortable "name" %></th>
+        <th><%= "description" %></th>
+        <th><%= sortable 'price' %></th>
+      </tr>
+
+      <% for jerky in @products %>
+      <tr>
+        <td><%= link_to jerky.name, product_path(jerky) %><br></td>
+        <td><%= jerky.description %><br></td>
+        <td class="price"><%= jerky.price %><br></td>
+      </tr>
+      <% end %>
+    </table>
+
+  <br>
+  <p><%= link_to "new product", new_product_path %></p>
+  </div>
+
+  <div class="span8">
+    <h3>The latest and greatest</h3>
+    <div class="thumnails">
+      <img alt="the biggest jerk!" style="width: 300px; height: 300px" src="../../assets/images/jerky300x300.jpg">
+    </div>
+  </div>
+
+
 </div>
