@@ -1,23 +1,35 @@
-<div class="frontpage">
-  <%= paginate @products %>
+<br><br>
+<div class="row-fluid">
 
-  <table class="pretty">
-    <tr>
-      <th><%= sortable "name" %></th>
-      <th><%= sortable "description" %></th>
-      <th><%= sortable 'price' %></th>
-    </tr>
+  <div class="span4">
+    <%= paginate @products %>
 
-    <% @products.each do |jerky| %>
-    <tr>
-      <td><%= sortable link_to jerky.name, product_path(jerky) %><br></td>
-      <td><%= sortable jerky.description %><br></td>
-      <td class="price"><%= sortable jerky.price %><br></td>
-    </tr>
-    <% end %>
-  </table>
+    <table class="pretty">
+      <tr>
+        <th><%= sortable "name" %></th>
+        <th><%= "description" %></th>
+        <th><%= sortable 'price' %></th>
+      </tr>
+
+      <% for jerky in @products %>
+      <tr>
+        <td><%= link_to jerky.name, product_path(jerky) %><br></td>
+        <td><%= jerky.description %><br></td>
+        <td class="price"><%= jerky.price %><br></td>
+      </tr>
+      <% end %>
+    </table>
+
   <br>
+  <p><%= link_to "new product", new_product_path %></p>
+  </div>
 
-  <p><%= link_to"new product", new_product_path %></p>
+  <div class="span8">
+    <h3>The latest and greatest</h3>
+    <div class="thumnails">
+      <img alt="the biggest jerk!" style="width: 300px; height: 300px" src="../../assets/images/jerky300x300.jpg">
+    </div>
+  </div>
+
 
 </div>

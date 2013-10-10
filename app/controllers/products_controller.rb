@@ -2,7 +2,7 @@ class ProductsController < ApplicationController
   helper_method :sort_column, :sort_direction
 
   def index
-    @products = Product.order(:name).page params[:page]
+    @products = Product.order(sort_column + " " + sort_direction).page params[:page]
   end
 
   def show
@@ -11,6 +11,20 @@ class ProductsController < ApplicationController
 
   def new
     @product = Product.new
+  end
+
+  def create
+    @product = Product.new(params[:product])
+    if @product.save
+      flsah[:notice] = "successfully created product"
+      redirect_to @product
+    else
+      render :action => 'new'
+    end
+  end
+
+  def edit
+    @product = Product.find(params[:id])
   end
 
   private
